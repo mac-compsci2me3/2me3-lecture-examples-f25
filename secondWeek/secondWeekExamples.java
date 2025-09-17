@@ -5,14 +5,14 @@ public class secondWeekExamples {
     
     // Example on Char
     // Char in C is one byte - using ascii (256 characters), while char in Java is using UTF-16 encoding - need two bytes
-    char[] chars = {'A', 'a', 'z', 'Z', '0', '9', 'α'};
-    for (char c : chars) {
-        System.out.printf("'%c' -> U+%04X (decimal: %d)%n", c, (int)c, (int)c);
-    }
+    // char[] chars = {'A', 'a', 'z', 'Z', '0', '9', 'α'};
+    // for (char c : chars) {
+    //     System.out.printf("'%c' -> U+%04X (decimal: %d)%n", c, (int)c, (int)c);
+    // }
 
-    // Examples on TypeCasting
-    // float IEEE 754: 1 bit for sign, 8 bits for exponent, and 23 bits for significant
-    // float stores the exponent separately from the mantissa (things after decimal points)
+    //Examples on TypeCasting
+    //float IEEE 754: 1 bit for sign, 8 bits for exponent, and 23 bits for significant
+    //float stores the exponent separately from the mantissa (things after decimal points)
     
     // float huge = 3.4E38f;       
     // float small = 16777217; // will lose precision
@@ -79,43 +79,43 @@ public class secondWeekExamples {
 
     // Question why no data loss from int to double?
     
-    // // Examples on Enum
-    // enum Day {
-    //     MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
-    // }
-    // // using integer, string, and other types can cause problem, like typos, readability etc.
+    // Examples on Enum
+    enum Day {
+        MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
+    }
+    // using integer, string, and other types can cause problem, like typos, readability etc.
 
-    // Day today = Day.FRIDAY;
+    Day today = Day.FRIDAY;
 
-    // enum Priority {
-    //     LOW,      // 0
-    //     MEDIUM,   // 1  
-    //     HIGH,     // 2
-    //     CRITICAL  // 3
-    // }
+    enum Priority {
+        LOW,      // 0
+        MEDIUM,   // 1  
+        HIGH,     // 2
+        CRITICAL  // 3
+    }
 
-    // Priority task1 = Priority.LOW;
-    // Priority task2 = Priority.HIGH;
+    Priority task1 = Priority.LOW;
+    Priority task2 = Priority.HIGH;
 
-    // int result = task1.compareTo(task2);
-    // if (result > 0 ){
-    //     System.out.println("Task 1 should be done first");
-    // } else if (result < 0) {
-    //     System.out.println("Task 2 should be done first");
-    // } else {
-    //     System.out.println("Task 1 and 2 should be done the same time");
-    // }
+    int result = task1.compareTo(task2);
+    if (result > 0 ){
+        System.out.println("Task 1 should be done first");
+    } else if (result < 0) {
+        System.out.println("Task 2 should be done first");
+    } else {
+        System.out.println("Task 1 and 2 should be done the same time");
+    }
     
 
-    // // Examples on Short Circuiting
+    // Examples on Short Circuiting
 
-    // boolean a = false;
-    // boolean b = true;
-    // int test = 4;
+    boolean a = false;
+    boolean b = true;
+    int test = 4;
 
-    // boolean result1 = a && (methodWontBeCalled());
+    boolean result1 = a && (methodWontBeCalled());
 
-    // System.out.println(result1);
+    System.out.println(result1);
 
     // bitwise operator
 
