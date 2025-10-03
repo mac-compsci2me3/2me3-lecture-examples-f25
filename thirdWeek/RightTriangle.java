@@ -1,5 +1,5 @@
 package thirdWeek;
-
+ 
 public class RightTriangle extends Triangle {
     public RightTriangle(double side1, double side2, double side3) {
         super(side1, side2, side3); 

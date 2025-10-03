@@ -1,6 +1,6 @@
 package fourthWeek;
 import java.io.FileNotFoundException;
-
+ 
 // - Different exceptions can be handled by different catch blocks (specific messages).
 // - Always order catch blocks from most specific to most general.
 // - finally block always runs, useful for cleanup.

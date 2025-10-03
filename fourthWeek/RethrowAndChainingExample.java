@@ -1,6 +1,6 @@
 package fourthWeek;
 import java.io.FileNotFoundException;
-
+ 
 // - Rethrowing: preserves the original exception object and stack trace.
 // - Wrapping: converts a low-level exception to a domain-specific one, but may lose the cause.
 // - Chaining: links the new exception to the original with initCause(), useful for debugging.
@@ -12,6 +12,10 @@ public class RethrowAndChainingExample {
         public MyException(String msg) { super(msg); }
         // TODO: Add a constructor here that also takes a Throwable cause
         // you can use super(msg, cause) for the constructor
+         public MyException(String msg, Throwable cause) { 
+            super(msg, cause); 
+        }
+    
     }
 
     // Lowest level check - throws FileNotFoundException if invalid filename
@@ -47,10 +51,11 @@ public class RethrowAndChainingExample {
             validateFilename(filename);
         } catch (FileNotFoundException fe) {
             System.out.println("FileNotFoundException: " + fe.getMessage());
-            MyException me = new MyException(fe.getMessage());
-            me.initCause(fe); // explicit chaining to preserve original cause
+            // MyException me = new MyException(fe.getMessage());
+            // me.initCause(fe); // explicit chaining to preserve original cause
             // TODO: Replace with constructor that accepts cause once added.
-            throw me;
+            throw new MyException(fe.getMessage(), fe);
+            //throw me;
         }
     }
 

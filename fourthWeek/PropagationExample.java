@@ -1,5 +1,5 @@
 package fourthWeek;
-
+ 
 // Exception propagation aligned with course slides
 //
 // - Exceptions bubble up the call chain until caught.
@@ -28,17 +28,17 @@ public class PropagationExample {
         methodB();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws MyException {
         // Top-level catch illustrates the propagation path.
-        try {
-            methodA();  // exception eventually caught here
-            System.out.println("This line will not run due to exception.");
-        } catch (MyException e) {
-            System.out.println("Caught at top level: " + e);
-            System.out.println("Stack trace shows propagation:");
-            e.printStackTrace(); // a built-in method with Throwable class
-        }
-        // methodA();
+        // try {
+        //     methodA();  // exception eventually caught here
+        //     System.out.println("This line will not run due to exception.");
+        // } catch (MyException e) {
+        //     System.out.println("Caught at top level: " + e);
+        //     System.out.println("Stack trace shows propagation:");
+        //     e.printStackTrace(); // a built-in method with Throwable class
+        // }
+        methodA();
         // If remove the try/catch above, the program will terminate when main()
         // receives the unhandled exception, matching the slide's description.
         System.out.println("Program continues after handling at top level.");
