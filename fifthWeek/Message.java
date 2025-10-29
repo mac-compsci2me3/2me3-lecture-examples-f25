@@ -8,7 +8,7 @@ public class Message {
         return content;
     }
 
-    private long getTimestamp() { 
+    public long getTimestamp() { 
         return timestamp;
     }
 }

@@ -5,9 +5,9 @@ import java.util.List;
 
 public class Chat {
     private String name;
-    private List<String> messages = new ArrayList<>();
+    private List<Message> messages = new ArrayList<Message>();
 
-    void add(String msg) {
+    void add(Message msg) {
         messages.add(msg);
     }
 
